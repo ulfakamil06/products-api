@@ -35,6 +35,10 @@ public class ProductController {
     public void deleteProduct(@PathVariable Long id) {
         productService.deleteProduct(id);
     }
+    @PostMapping("/products/digital")
+    public Product addDigitalProduct(@RequestBody DigitalProduct product) {
+        return productService.addProduct(product);
+    }
 
     @GetMapping("/products/search")
     public List<Product> search(@RequestParam String name) {
